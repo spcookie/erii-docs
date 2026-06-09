@@ -1,6 +1,6 @@
 site_name: erii
 site_description: 集成情绪感知、记忆存储与性格建模的 AI 群聊机器人框架
-site_url: https://erii.spcookie.me
+site_url: https://spcookie.github.io/erii-docs/
 repo_url: https://github.com/spcookie/erii
 repo_name: spcookie/erii
 edit_uri: edit/master/erii-docs/docs/
