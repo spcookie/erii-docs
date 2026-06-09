@@ -1,0 +1,160 @@
+site_name: erii
+site_description: 集成情绪感知、记忆存储与性格建模的 AI 群聊机器人框架
+site_url: https://erii.spcookie.me
+repo_url: https://github.com/spcookie/erii
+repo_name: spcookie/erii
+edit_uri: edit/master/erii-docs/docs/
+
+theme:
+  name: material
+  language: zh
+  logo: assets/LOGO.svg
+  favicon: assets/LOGO.svg
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.prune
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+copyright: Copyright &copy; 2024 - 2026 spcookie
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_search: true
+      languages:
+        - locale: zh
+          default: true
+          name: 中文
+          build: true
+          nav:
+            - 快速开始:
+                - 什么是 erii: what-is-erii.md
+                - 快速安装: getting-started.md
+                - 服务端:
+                    - 启动服务: server/start.md
+                    - 升级与卸载: server/upgrade.md
+                - CLI 命令:
+                    - setup: cli/setup.md
+                    - config: cli/config.md
+                    - manage: cli/manage.md
+                    - stats: cli/stats.md
+                    - reload 与 refresh: cli/reload-refresh.md
+                - 插件管理:
+                    - 安装插件: plugins/install.md
+                    - 配置插件: plugins/config.md
+                    - 卸载插件: plugins/uninstall.md
+                - 附录：环境安装: appendix.md
+            - 配置参考:
+                - 应用配置: config/app.md
+                - 环境变量: config/env.md
+                - 服务端参数: server/params.md
+            - 开发手册:
+                - 本地开发环境: dev/setup.md
+                - 插件开发概述: dev/plugin-overview.md
+                - 类开发模式: dev/plugin-class.md
+                - 注解开发模式: dev/plugin-annotation.md
+                - 构建与调试: dev/debugging.md
+        - locale: en
+          name: English
+          build: true
+          nav:
+            - Quick Start:
+                - What is erii: what-is-erii.md
+                - Quick Install: getting-started.md
+                - Server:
+                    - Start Server: server/start.md
+                    - Upgrade & Uninstall: server/upgrade.md
+                - CLI Commands:
+                    - setup: cli/setup.md
+                    - config: cli/config.md
+                    - manage: cli/manage.md
+                    - stats: cli/stats.md
+                    - reload & refresh: cli/reload-refresh.md
+                - Plugins:
+                    - Install: plugins/install.md
+                    - Configure: plugins/config.md
+                    - Uninstall: plugins/uninstall.md
+            - Configuration:
+                - App Config: config/app.md
+                - Environment Variables: config/env.md
+                - Server Parameters: server/params.md
+            - Development:
+                - Local Setup: dev/setup.md
+                - Plugin Overview: dev/plugin-overview.md
+                - Class-based Mode: dev/plugin-class.md
+                - Annotation-based Mode: dev/plugin-annotation.md
+                - Build & Debug: dev/debugging.md
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+  - git-committers:
+      repository: spcookie/erii
+      branch: master
+  - git-authors
+  - meta
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
