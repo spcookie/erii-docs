@@ -20,57 +20,57 @@ erii config app set <键> <值>  # 修改配置项
 
 ### Google Gemini
 
-| 配置键 | 说明 |
-|:---|:---|
-| `llm.google.api-key` | API Key |
-| `llm.google.base-url` | API 地址 |
-| `llm.google.models.lite` | 轻量模型 |
-| `llm.google.models.flash` | 快速模型 |
-| `llm.google.models.pro` | 高质量模型 |
+| 配置键                                 | 说明      |
+|:------------------------------------|:--------|
+| `llm.providers.google.api-key`      | API Key |
+| `llm.providers.google.base-url`     | API 地址  |
+| `llm.providers.google.models.lite`  | 轻量模型    |
+| `llm.providers.google.models.flash` | 快速模型    |
+| `llm.providers.google.models.pro`   | 高质量模型   |
 
 ### DeepSeek
 
-| 配置键 | 说明 |
-|:---|:---|
-| `llm.deep-seek.api-key` | API Key |
-| `llm.deep-seek.base-url` | API 地址 |
-| `llm.deep-seek.models.lite` | 轻量模型 |
+| 配置键                                   | 说明      |
+|:--------------------------------------|:--------|
+| `llm.providers.deep-seek.api-key`     | API Key |
+| `llm.providers.deep-seek.base-url`    | API 地址  |
+| `llm.providers.deep-seek.models.lite` | 轻量模型    |
 
 ### MiniMax
 
-| 配置键 | 说明 |
-|:---|:---|
-| `llm.minimax.api-key` | API Key |
-| `llm.minimax.base-url` | API 地址 |
-| `llm.minimax.models.lite` | 轻量模型 |
-| `llm.minimax.models.pro` | 高质量模型 |
+| 配置键                                 | 说明      |
+|:------------------------------------|:--------|
+| `llm.providers.minimax.api-key`     | API Key |
+| `llm.providers.minimax.base-url`    | API 地址  |
+| `llm.providers.minimax.models.lite` | 轻量模型    |
+| `llm.providers.minimax.models.pro`  | 高质量模型   |
 
 ### OpenAI
 
-| 配置键 | 说明 |
-|:---|:---|
-| `llm.openai.api-key` | API Key |
-| `llm.openai.base-url` | API 地址 |
-| `llm.openai.models.lite` | 轻量模型 |
-| `llm.openai.models.flash` | 快速模型 |
-| `llm.openai.models.pro` | 高质量模型 |
+| 配置键                                 | 说明      |
+|:------------------------------------|:--------|
+| `llm.providers.openai.api-key`      | API Key |
+| `llm.providers.openai.base-url`     | API 地址  |
+| `llm.providers.openai.models.lite`  | 轻量模型    |
+| `llm.providers.openai.models.flash` | 快速模型    |
+| `llm.providers.openai.models.pro`   | 高质量模型   |
 
 ### Anthropic
 
-| 配置键 | 说明 |
-|:---|:---|
-| `llm.anthropic.api-key` | API Key |
-| `llm.anthropic.base-url` | API 地址 |
-| `llm.anthropic.models.lite` | 轻量模型 |
-| `llm.anthropic.models.flash` | 快速模型 |
+| 配置键                                    | 说明      |
+|:---------------------------------------|:--------|
+| `llm.providers.anthropic.api-key`      | API Key |
+| `llm.providers.anthropic.base-url`     | API 地址  |
+| `llm.providers.anthropic.models.lite`  | 轻量模型    |
+| `llm.providers.anthropic.models.flash` | 快速模型    |
 
 ### OpenRouter
 
-| 配置键 | 说明 |
-|:---|:---|
-| `llm.openrouter.api-key` | API Key |
-| `llm.openrouter.base-url` | API 地址 |
-| `llm.openrouter.models.lite` | 轻量模型 |
+| 配置键                                    | 说明      |
+|:---------------------------------------|:--------|
+| `llm.providers.openrouter.api-key`     | API Key |
+| `llm.providers.openrouter.base-url`    | API 地址  |
+| `llm.providers.openrouter.models.lite` | 轻量模型    |
 
 ---
 

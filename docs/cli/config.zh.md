@@ -42,4 +42,4 @@ erii config plugin get speech api_key
 erii config plugin set speech api_key "your-key"
 ```
 
-配置键使用点分隔的路径，例如 `llm.google.api-key`。
+配置键使用点分隔的路径，例如 `llm.providers.google.api-key`。

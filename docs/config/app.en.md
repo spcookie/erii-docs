@@ -10,13 +10,15 @@ Each LLM provider requires `api-key`, `base-url`, and model tiers:
 llm {
   choice-provider: "minimax"
 
-  google {
-    api-key: ${?GOOGLE_API_KEY}
-    base-url: "https://generativelanguage.googleapis.com"
-    models {
-      lite: "gemini-2.0-flash-lite"
-      flash: "gemini-2.0-flash"
-      pro: "gemini-2.5-pro"
+  providers {
+    google {
+      api-key: ${?GOOGLE_API_KEY}
+      base-url: "https://generativelanguage.googleapis.com"
+      models {
+        lite: "gemini-2.0-flash-lite"
+        flash: "gemini-2.0-flash"
+        pro: "gemini-2.5-pro"
+      }
     }
   }
 }
