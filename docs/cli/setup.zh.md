@@ -15,13 +15,11 @@ erii setup
 | 提供商 | 需要准备 |
 |:---|:---|
 | Google Gemini | Gemini API Key |
-| DeepSeek | DeepSeek API Key |
-| MiniMax | MiniMax API Key |
 | OpenAI | OpenAI API Key |
 | Anthropic | Anthropic API Key |
 | OpenRouter | OpenRouter API Key |
 
-只需配置一个即可。推荐 MiniMax 或 Google Gemini，性价比高。
+只需配置一个即可。推荐 Google Gemini，性价比高。
 
 ### 第二步：工具配置（可选）
 

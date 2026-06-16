@@ -8,7 +8,7 @@ Each LLM provider requires `api-key`, `base-url`, and model tiers:
 
 ```hocon
 llm {
-  choice-provider: "minimax"
+  choice-provider: "google"
 
   providers {
     google {

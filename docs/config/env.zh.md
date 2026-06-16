@@ -17,8 +17,6 @@ erii config env set <变量名> <值>  # 修改
 | 变量名 | 对应提供商 |
 |:---|:---|
 | `GOOGLE_API_KEY` | Google Gemini |
-| `DEEP_SEEK_API_KEY` | DeepSeek |
-| `MINIMAX_API_KEY` | MiniMax |
 | `OPENAI_API_KEY` | OpenAI |
 | `ANTHROPIC_API_KEY` | Anthropic |
 | `OPENROUTER_API_KEY` | OpenRouter |

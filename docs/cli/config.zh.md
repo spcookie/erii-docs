@@ -27,7 +27,7 @@ erii config
 erii config app get llm.choice-provider
 
 # 修改应用配置
-erii config app set llm.choice-provider minimax
+erii config app set llm.choice-provider google
 
 # 读取环境变量
 erii config env get GOOGLE_API_KEY

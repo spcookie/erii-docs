@@ -13,15 +13,15 @@ erii is built on the PF4J plugin framework and supports four extension types:
 
 ## Built-in Plugins
 
-| Plugin | Type | Description |
-|:---|:---|:---|
-| `speech` | AgentExtension | TTS plugin using MiniMax TTS to convert text to voice |
-| `lolisuki` | RouteExtension | Anime image plugin, fetches and sends images from lolisuki.cn |
-| `net-ease-music` | PassiveExtension | NetEase Music plugin, searches and sends music cards |
-| `qq-face` | PassiveExtension | QQ emoji plugin, semantically matches and sends appropriate emojis |
-| `seeddream` | RouteExtension | AI image generation plugin, supports text-to-image and image-to-image |
-| `rollpig` | AgentExtension | Roll Pig game plugin, a collection and nurturing interactive game |
-| `animal` | AgentExtension | Virtual pet nurturing plugin, role-playing with affinity system |
+| Plugin           | Type             | Description                                                           |
+|:-----------------|:-----------------|:----------------------------------------------------------------------|
+| `speech`         | AgentExtension   | TTS plugin to convert text to voice                                   |
+| `lolisuki`       | RouteExtension   | Anime image plugin, fetches and sends images from lolisuki.cn         |
+| `net-ease-music` | PassiveExtension | NetEase Music plugin, searches and sends music cards                  |
+| `qq-face`        | PassiveExtension | QQ emoji plugin, semantically matches and sends appropriate emojis    |
+| `seeddream`      | RouteExtension   | AI image generation plugin, supports text-to-image and image-to-image |
+| `rollpig`        | AgentExtension   | Roll Pig game plugin, a collection and nurturing interactive game     |
+| `animal`         | AgentExtension   | Virtual pet nurturing plugin, role-playing with affinity system       |
 
 ## Installation Methods
 

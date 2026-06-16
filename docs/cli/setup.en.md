@@ -8,7 +8,8 @@ erii setup
 
 ## Setup Flow
 
-1. **LLM Configuration** -- Select an LLM provider (Gemini / DeepSeek / MiniMax / OpenAI / Anthropic / OpenRouter), and fill in the API Key and Base URL
+1. **LLM Configuration** -- Select an LLM provider (Gemini / OpenAI / Anthropic / OpenRouter), and fill in the API Key
+   and Base URL
 2. **Embedding Configuration** -- Select a vector embedding service and fill in the API Key
 3. **Search/Vision Configuration** -- (Optional) Configure search and vision analysis services
 4. **OneBot Connection** -- Fill in the NapCat WebSocket address and Token

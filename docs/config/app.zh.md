@@ -14,9 +14,9 @@ erii config app set <键> <值>  # 修改配置项
 
 ### 通用设置
 
-| 配置键 | 说明 | 可选值 |
-|:---|:---|:---|
-| `llm.choice-provider` | 默认 AI 提供商 | `google` / `deep-seek` / `minimax` / `openai` / `anthropic` / `openrouter` |
+| 配置键                   | 说明        | 可选值                                              |
+|:----------------------|:----------|:-------------------------------------------------|
+| `llm.choice-provider` | 默认 AI 提供商 | `google` / `openai` / `anthropic` / `openrouter` |
 
 ### Google Gemini
 
@@ -27,23 +27,6 @@ erii config app set <键> <值>  # 修改配置项
 | `llm.providers.google.models.lite`  | 轻量模型    |
 | `llm.providers.google.models.flash` | 快速模型    |
 | `llm.providers.google.models.pro`   | 高质量模型   |
-
-### DeepSeek
-
-| 配置键                                   | 说明      |
-|:--------------------------------------|:--------|
-| `llm.providers.deep-seek.api-key`     | API Key |
-| `llm.providers.deep-seek.base-url`    | API 地址  |
-| `llm.providers.deep-seek.models.lite` | 轻量模型    |
-
-### MiniMax
-
-| 配置键                                 | 说明      |
-|:------------------------------------|:--------|
-| `llm.providers.minimax.api-key`     | API Key |
-| `llm.providers.minimax.base-url`    | API 地址  |
-| `llm.providers.minimax.models.lite` | 轻量模型    |
-| `llm.providers.minimax.models.pro`  | 高质量模型   |
 
 ### OpenAI
 
