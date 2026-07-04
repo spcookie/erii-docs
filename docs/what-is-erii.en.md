@@ -78,6 +78,7 @@ erii is built on the PF4J plugin framework and supports four extension points:
 | **Web Search**       | Real-time search for AI Agent               | Exa / MiniMax Search                            |
 | **Vision**           | Image content understanding and description | MiniMax Vision                                  |
 | **Browser**          | Web page screenshots and Markdown scraping  | Playwright                                      |
+| **MCP Tools**        | External tool servers via Model Context Protocol | stdio / SSE / Streamable HTTP / WebSocket        |
 
 ## Tech Stack
 

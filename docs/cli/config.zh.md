@@ -17,6 +17,7 @@ erii config
 | `plugin` | 插件配置 |
 | `souls` | Bot 人格设定 |
 | `rules` | 行为规则 |
+| `mcp` | MCP 服务配置 |
 
 ## 命令行读写
 

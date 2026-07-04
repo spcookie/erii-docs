@@ -20,6 +20,16 @@ ktor {
 }
 ```
 
+## MCP Configuration Directory
+
+Directory for MCP (Model Context Protocol) server configuration files. Defaults to `mcp/`. Override via JVM property:
+
+```
+-Dconfig.mcp.dir=./conf/mcp
+```
+
+Place JSON config files in this directory, one per MCP server. Supports stdio, SSE, Streamable HTTP, and WebSocket transports.
+
 ## JobRunr Dashboard
 
 JobRunr provides a visual management interface for scheduled tasks and background jobs:

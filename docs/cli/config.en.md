@@ -30,3 +30,4 @@ After entering `erii config`, use arrow keys to navigate between different confi
 | `plugin` | Plugin JSON configuration |
 | `souls` | Bot persona configuration |
 | `rules` | Rule files |
+| `mcp` | MCP server configuration |

@@ -8,6 +8,16 @@
 ERII_PORT=9090
 ```
 
+## MCP 工具配置目录
+
+MCP（Model Context Protocol）服务配置文件存放目录，默认为 `mcp/`。可通过 JVM 属性覆盖：
+
+```
+-Dconfig.mcp.dir=./conf/mcp
+```
+
+目录内放置 JSON 配置文件，每个文件定义一个 MCP 服务。支持 stdio、SSE、Streamable HTTP、WebSocket 四种传输方式。
+	
 ## 任务管理面板
 
 erii 内置了一个任务管理面板，可以查看定时任务和后台作业的运行情况。
