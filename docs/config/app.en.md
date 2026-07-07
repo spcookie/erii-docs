@@ -254,7 +254,7 @@ embedding {
   provider: "bytedance"
   api-key: ${?EMBEDDING_API_KEY}
   url: "https://ark.cn-beijing.volces.com/api/v3/embeddings/multimodal"
-  model: "doubao-embedding-vision-250615"
+  model: "doubao-embedding-vision-251215"
 }
 
 search {
