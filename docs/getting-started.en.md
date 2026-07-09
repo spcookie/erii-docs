@@ -3,7 +3,8 @@
 ## Prerequisites
 
 - **Node.js** 18+ — see [Appendix: Environment Setup](appendix.md#nodejs)
-- **NapCat** — QQ access service, see [Appendix: Environment Setup](appendix.md#napcat)
+- **OneBot V11 Server** — Any QQ access service supporting the OneBot V11 protocol (e.g. NapCat, LLOneBot),
+  see [Appendix: Environment Setup](appendix.md#napcat)
 - **LLM API Key** — at least one LLM provider API Key
 
 ## Script Install (Recommended)
@@ -27,7 +28,7 @@ The script automatically checks and installs the Node.js environment.
 If you already have Node.js installed:
 
 ```bash
-npm install -g @spcookie/erii
+npm install -g erii-bot
 erii setup
 ```
 
@@ -38,25 +39,25 @@ Create an erii sub-project within an existing project, suitable for advanced use
 === "npm"
 
     ```bash
-    npm create @spcookie/erii
+    npm create erii-bot
     ```
 
 === "pnpm"
 
     ```bash
-    pnpm create @spcookie/erii
+    pnpm create erii-bot
     ```
 
 === "yarn"
 
     ```bash
-    yarn create @spcookie/erii
+    yarn create erii-bot
     ```
 
 === "bun"
 
     ```bash
-    bun create @spcookie/erii
+    bun create erii-bot
     ```
 
 After installation, enter the project directory:

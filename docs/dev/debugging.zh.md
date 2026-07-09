@@ -113,7 +113,7 @@ class MyExtension : PassiveExtension<MyPlugin> {
 查看日志：
 
 ```bash
-erii server logs
+erii log
 ```
 
 在开发模式（`ERII_START_MODE=CLI`）下，日志直接输出到控制台。

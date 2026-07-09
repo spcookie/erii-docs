@@ -60,6 +60,7 @@ plugins:
           name: 中文
           build: true
           nav:
+            - 首页: index.md
             - 快速开始:
                 - 什么是 erii: what-is-erii.md
                 - 快速安装: getting-started.md
@@ -93,6 +94,7 @@ plugins:
           name: English
           build: true
           nav:
+            - Home: index.md
             - Quick Start:
                 - What is erii: what-is-erii.md
                 - Quick Install: getting-started.md

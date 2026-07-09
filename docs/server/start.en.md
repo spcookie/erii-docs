@@ -14,7 +14,6 @@ The server listens on `http://localhost:8080` by default.
 | `erii server stop` | Stop the server |
 | `erii server status` | View server status |
 | `erii server restart` | Restart the server |
-| `erii server logs` | View server logs |
 
 ## Changing Default Credentials
 

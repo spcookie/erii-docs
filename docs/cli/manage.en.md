@@ -8,13 +8,18 @@ erii manage
 
 ## Manageable Data Types
 
-| Data Type      | Description                                            |
-|:---------------|:-------------------------------------------------------|
-| **Memory**     | Fact memory data, with Record, Vector, and Graph views |
-| **Profiles**   | User profile data                                      |
-| **Memes**      | Meme and catchphrase data                              |
-| **Vocabulary** | Learned vocabulary data                                |
-| **Summaries**  | Chat summary records                                   |
+| Data Type        | Description                                            |
+|:-----------------|:-------------------------------------------------------|
+| **Memory**       | Fact memory data, with Record, Vector, and Graph views |
+| **Profiles**     | User profile data                                      |
+| **Memes**        | Meme and catchphrase data                              |
+| **Vocabulary**   | Learned vocabulary data                                |
+| **Summaries**    | Chat summary records                                   |
+| **Chat History** | Raw chat message records                               |
+| **Resources**    | Shared images and files                                |
+| **Emotion**      | Current emotion state data                             |
+| **Flow**         | Current topic engagement state                         |
+| **Cron**         | Scheduled reminders and tasks                          |
 
 ## Memory Submenu
 

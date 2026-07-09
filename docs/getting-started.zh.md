@@ -3,7 +3,8 @@
 ## 前置要求
 
 - **Node.js** 18+ — 安装方法见 [附录：环境安装](appendix.md#nodejs)
-- **NapCat** — QQ 接入服务，安装方法见 [附录：环境安装](appendix.md#napcat)
+- **OneBot V11 服务端** — 支持 OneBot V11 协议的 QQ 接入服务（如 NapCat、LLOneBot
+  等），安装方法见 [附录：环境安装](appendix.md#napcat)
 - **LLM API Key** — 需至少一个 LLM 提供商的 API Key
 
 ## 脚本安装（推荐）
@@ -27,7 +28,7 @@
 如果你已安装 Node.js，可直接全局安装：
 
 ```bash
-npm install -g @spcookie/erii
+npm install -g erii-bot
 erii setup
 ```
 
@@ -38,25 +39,25 @@ erii setup
 === "npm"
 
     ```bash
-    npm create @spcookie/erii
+    npm create erii-bot
     ```
 
 === "pnpm"
 
     ```bash
-    pnpm create @spcookie/erii
+    pnpm create erii-bot
     ```
 
 === "yarn"
 
     ```bash
-    yarn create @spcookie/erii
+    yarn create erii-bot
     ```
 
 === "bun"
 
     ```bash
-    bun create @spcookie/erii
+    bun create erii-bot
     ```
 
 安装完成后进入项目目录：

@@ -14,12 +14,10 @@ erii config env set <变量名> <值>  # 修改
 
 各 AI 提供商的 API Key：
 
-| 变量名 | 对应提供商 |
-|:---|:---|
-| `GOOGLE_API_KEY` | Google Gemini |
-| `OPENAI_API_KEY` | OpenAI |
-| `ANTHROPIC_API_KEY` | Anthropic |
-| `OPENROUTER_API_KEY` | OpenRouter |
+| 变量名                 | 对应提供商        |
+|:--------------------|:-------------|
+| `OPENAI_API_KEY`    | OpenAI 兼容    |
+| `ANTHROPIC_API_KEY` | Anthropic 兼容 |
 
 ---
 
@@ -53,7 +51,6 @@ erii config env set <变量名> <值>  # 修改
 | `ERII_JOBRUNR_DASHBOARD_PORT` | `8000` | 任务面板端口 |
 | `ERII_H2_CONSOLE` | `false` | 启用数据库面板 |
 | `ERII_H2_CONSOLE_PORT` | `8082` | 数据库面板端口 |
-| `ERII_MIGRATION` | `false` | 启用数据库迁移 |
 
 ---
 

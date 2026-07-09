@@ -16,15 +16,6 @@ erii server
 | `erii server stop` | 停止服务 |
 | `erii server status` | 查看服务是否在运行 |
 | `erii server restart` | 重启服务 |
-| `erii server logs` | 查看服务日志 |
-
-`erii server logs` 支持两个参数：
-
-```bash
-erii server logs --tail 50   # 查看最近 50 行日志
-erii server logs --all       # 查看完整日志
-```
-
 ## 前台运行
 
 调试时可以让服务在前台运行，日志直接输出到终端：

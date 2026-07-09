@@ -6,9 +6,9 @@
 
 ### General Settings
 
-| Key                   | Description         | Allowed Values                                   |
-|:----------------------|:--------------------|:-------------------------------------------------|
-| `llm.choice-provider` | Default AI provider | `google` / `openai` / `anthropic` / `openrouter` |
+| Key                   | Description         | Allowed Values         |
+|:----------------------|:--------------------|:-----------------------|
+| `llm.choice-provider` | Default AI provider | `openai` / `anthropic` |
 
 ### Capability Declaration
 
@@ -39,16 +39,16 @@ LLM parameters (such as `temperature`, `maxTokens`, etc.) for each model tier.
 
 ```hocon
 llm {
-  choice-provider: "google"
+  choice-provider: "openai"
 
   providers {
-    google {
-      api-key: ${?GOOGLE_API_KEY}
-      base-url: "https://generativelanguage.googleapis.com"
+    openai {
+      api-key: ${?OPENAI_API_KEY}
+      base-url: "https://api.openai.com/v1"
       models {
-        lite: "gemini-2.0-flash-lite"
-        flash: "gemini-2.0-flash"
-        pro: "gemini-2.5-pro"
+        lite: "gpt-4o-mini"
+        flash: "gpt-4o"
+        pro: "gpt-4.1"
       }
     }
   }
@@ -285,19 +285,10 @@ proxy {
 
 ## Security
 
-> Not included in the default `application.conf`. Add manually if you need admin/UI authentication.
+Configure the admin page username and password via environment variables.
+See [Environment Variables](env.md#server-configuration).
 
 | Key                 | Description    |
 |:--------------------|:---------------|
 | `security.username` | Admin username |
 | `security.password` | Admin password |
-
----
-
-## Migration
-
-> Not included in the default `application.conf`. Add manually to run database migrations on startup.
-
-| Key         | Description                                             |
-|:------------|:--------------------------------------------------------|
-| `migration` | Set to `true` to execute database migrations on startup |

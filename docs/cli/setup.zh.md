@@ -12,14 +12,12 @@ erii setup
 
 选择 AI 提供商并填写 API Key。支持的提供商：
 
-| 提供商 | 需要准备 |
-|:---|:---|
-| Google Gemini | Gemini API Key |
-| OpenAI | OpenAI API Key |
-| Anthropic | Anthropic API Key |
-| OpenRouter | OpenRouter API Key |
+| 提供商          | 需要准备                            |
+|:-------------|:--------------------------------|
+| OpenAI 兼容    | OpenAI 兼容 API Key 和 Base URL    |
+| Anthropic 兼容 | Anthropic 兼容 API Key 和 Base URL |
 
-只需配置一个即可。推荐 Google Gemini，性价比高。
+只需配置一个即可。
 
 ### 第二步：工具配置（可选）
 

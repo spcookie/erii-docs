@@ -4,7 +4,7 @@ Upgrade to the latest version:
 
 ```bash
 # Upgrade erii
-npm update @spcookie/erii
+npm update erii-bot
 
 # Reload configuration and plugins
 npx erii reload
@@ -18,19 +18,24 @@ npx erii reload
 === "Global Uninstall"
 
     ```bash
-    npm uninstall -g @spcookie/erii
+    npm uninstall -g erii-bot
     ```
 
 === "Local Project Uninstall"
 
     ```bash
-    npm uninstall @spcookie/erii
+    npm uninstall erii-bot
     ```
 
 === "Full Cleanup"
 
-    If the project was created with `npm create @spcookie/erii`, simply delete the entire project directory:
+    If the project was created with `npm create erii-bot`, simply delete the project directory (`erii` is the default name; replace with your actual directory name):
 
     ```bash
     rm -rf erii
     ```
+
+After uninstalling, the following data will remain in the project directory (delete manually if no longer needed):
+
+- `store/` — Database files
+- `logs/` — Log files

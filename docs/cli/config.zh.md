@@ -28,10 +28,10 @@ erii config
 erii config app get llm.choice-provider
 
 # 修改应用配置
-erii config app set llm.choice-provider google
+erii config app set llm.choice-provider openai
 
 # 读取环境变量
-erii config env get GOOGLE_API_KEY
+erii config env get OPENAI_API_KEY
 
 # 修改环境变量
 erii config env set ERII_PORT 9090
@@ -43,4 +43,11 @@ erii config plugin get speech api_key
 erii config plugin set speech api_key "your-key"
 ```
 
-配置键使用点分隔的路径，例如 `llm.providers.google.api-key`。
+配置键使用点分隔的路径，例如 `llm.providers.openai.api-key`。
+
+## CLI 快捷操作
+
+| 命令                            | 说明          |
+|:------------------------------|:------------|
+| `erii config copy`            | 将当前配置复制到剪贴板 |
+| `erii config desc <配置键> <描述>` | 编辑配置项的说明描述  |

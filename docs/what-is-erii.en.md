@@ -71,14 +71,14 @@ erii is built on the PF4J plugin framework and supports four extension points:
 
 ## Component Services
 
-| Component            | Description                                 | Supported Backends                              |
-|:---------------------|:--------------------------------------------|:------------------------------------------------|
-| **LLM Chat**         | AI conversational reasoning                 | Google Gemini / OpenAI / Anthropic / OpenRouter |
-| **Vector Embedding** | Text and image semantic vectorization       | ByteDance Embedding / SiliconFlow               |
-| **Web Search**       | Real-time search for AI Agent               | Exa / MiniMax Search                            |
-| **Vision**           | Image content understanding and description | MiniMax Vision                                  |
-| **Browser**          | Web page screenshots and Markdown scraping  | Playwright                                      |
-| **MCP Tools**        | External tool servers via Model Context Protocol | stdio / SSE / Streamable HTTP / WebSocket        |
+| Component            | Description                                      | Supported Backends                        |
+|:---------------------|:-------------------------------------------------|:------------------------------------------|
+| **LLM Chat**         | AI conversational reasoning                      | OpenAI / Anthropic compatible APIs        |
+| **Vector Embedding** | Text and image semantic vectorization            | ByteDance Embedding / SiliconFlow         |
+| **Web Search**       | Real-time search for AI Agent                    | Exa / MiniMax Search                      |
+| **Vision**           | Image content understanding and description      | MiniMax Vision                            |
+| **Browser**          | Web page screenshots and Markdown scraping       | Playwright                                |
+| **MCP Tools**        | External tool servers via Model Context Protocol | stdio / SSE / Streamable HTTP / WebSocket |
 
 ## Tech Stack
 

@@ -4,12 +4,10 @@
 
 ## LLM API Keys
 
-| Variable | Provider |
-|:---|:---|
-| `GOOGLE_API_KEY` | Google Gemini |
-| `OPENAI_API_KEY` | OpenAI |
-| `ANTHROPIC_API_KEY` | Anthropic |
-| `OPENROUTER_API_KEY` | OpenRouter |
+| Variable            | Provider             |
+|:--------------------|:---------------------|
+| `OPENAI_API_KEY`    | OpenAI-compatible    |
+| `ANTHROPIC_API_KEY` | Anthropic-compatible |
 
 ## Service Components
 
@@ -31,7 +29,6 @@
 | `ERII_JOBRUNR_DASHBOARD_PORT` | `8000` | Dashboard port |
 | `ERII_H2_CONSOLE` | `false` | Enable database console |
 | `ERII_H2_CONSOLE_PORT` | `8082` | Console port |
-| `ERII_MIGRATION` | `false` | Enable DB migration |
 
 ## Proxy
 

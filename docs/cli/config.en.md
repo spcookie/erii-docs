@@ -31,3 +31,10 @@ After entering `erii config`, use arrow keys to navigate between different confi
 | `souls` | Bot persona configuration |
 | `rules` | Rule files |
 | `mcp` | MCP server configuration |
+
+## CLI Shortcuts
+
+| Command                                | Description                             |
+|:---------------------------------------|:----------------------------------------|
+| `erii config copy`                     | Copy current configuration to clipboard |
+| `erii config desc <key> <description>` | Edit the description of a config item   |

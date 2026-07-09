@@ -14,9 +14,9 @@ erii config app set <键> <值>  # 修改配置项
 
 ### 通用设置
 
-| 配置键                   | 说明        | 可选值                                              |
-|:----------------------|:----------|:-------------------------------------------------|
-| `llm.choice-provider` | 默认 AI 提供商 | `google` / `openai` / `anthropic` / `openrouter` |
+| 配置键                   | 说明        | 可选值                    |
+|:----------------------|:----------|:-----------------------|
+| `llm.choice-provider` | 默认 AI 提供商 | `openai` / `anthropic` |
 
 ### 能力声明
 
@@ -41,16 +41,6 @@ erii config app set <键> <值>  # 修改配置项
 
 `llm.param.lite`、`llm.param.flash`、`llm.param.pro` 可用于为各模型层覆盖默认 LLM 参数（如 `temperature`、`maxTokens` 等）。
 
-### Google Gemini
-
-| 配置键                                 | 说明      |
-|:------------------------------------|:--------|
-| `llm.providers.google.api-key`      | API Key |
-| `llm.providers.google.base-url`     | API 地址  |
-| `llm.providers.google.models.lite`  | 轻量模型    |
-| `llm.providers.google.models.flash` | 快速模型    |
-| `llm.providers.google.models.pro`   | 高质量模型   |
-
 ### OpenAI
 
 | 配置键                                 | 说明      |
@@ -70,16 +60,6 @@ erii config app set <键> <值>  # 修改配置项
 | `llm.providers.anthropic.models.lite`  | 轻量模型    |
 | `llm.providers.anthropic.models.flash` | 快速模型    |
 | `llm.providers.anthropic.models.pro`   | 高质量模型   |
-
-### OpenRouter
-
-| 配置键                                     | 说明      |
-|:----------------------------------------|:--------|
-| `llm.providers.openrouter.api-key`      | API Key |
-| `llm.providers.openrouter.base-url`     | API 地址  |
-| `llm.providers.openrouter.models.lite`  | 轻量模型    |
-| `llm.providers.openrouter.models.flash` | 快速模型    |
-| `llm.providers.openrouter.models.pro`   | 高质量模型   |
 
 ### 用量计费
 
@@ -293,19 +273,9 @@ erii config app set <键> <值>  # 修改配置项
 
 ## security 管理认证
 
-> 默认 `application.conf` 中未包含此块，如需启用管理接口/IPC 认证，可手动添加。
+通过环境变量配置管理页面的用户名和密码，参见 [环境变量](env.md#_2)。
 
 | 配置键                 | 说明      |
 |:--------------------|:--------|
 | `security.username` | 管理页面用户名 |
 | `security.password` | 管理页面密码  |
-
----
-
-## migration 数据库迁移
-
-> 默认 `application.conf` 中未包含此键，如需启动时自动执行数据库迁移，可手动添加。
-
-| 配置键         | 说明                     |
-|:------------|:-----------------------|
-| `migration` | 设为 `true` 时启动自动执行数据库迁移 |

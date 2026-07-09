@@ -1,69 +1,45 @@
 # Startup Parameters
 
-The erii server supports enabling additional management and debugging panels via JVM system properties.
-
 ## Server Port
 
-The default port is `8080`. It can be changed via environment variable or `application.conf`:
+The default port is `8080`. Change it with the `-port` flag:
 
 ```bash
-export ERII_PORT=9090
+erii server -port 9090
 ```
-
-Or in `application.conf`:
-
-```hocon
-ktor {
-  deployment {
-    port: 9090
-  }
-}
-```
-
-## MCP Configuration Directory
-
-Directory for MCP (Model Context Protocol) server configuration files. Defaults to `mcp/`. Override via JVM property:
-
-```
--Dconfig.mcp.dir=./conf/mcp
-```
-
-Place JSON config files in this directory, one per MCP server. Supports stdio, SSE, Streamable HTTP, and WebSocket transports.
 
 ## JobRunr Dashboard
 
-JobRunr provides a visual management interface for scheduled tasks and background jobs:
+JobRunr provides a visual management interface for scheduled tasks and background jobs.
 
-```bash
-# Enable via environment variable
-export ERII_JOBRUNR_DASHBOARD=true
+Enable via `.env.local`:
 
-# Or via JVM arguments
-java -Djobrunr.dashboard.enabled=true -Djobrunr.dashboard.port=8000 -jar erii.jar
+```ini
+ERII_JOBRUNR_DASHBOARD=true
+ERII_JOBRUNR_DASHBOARD_PORT=8000
 ```
 
-| Parameter | Default | Description |
-|:---|:---|:---|
-| `jobrunr.dashboard.enabled` | `false` | Whether to enable the JobRunr dashboard |
-| `jobrunr.dashboard.port` | `8000` | Dashboard port |
+| Parameter                     | Default | Description                  |
+|:------------------------------|:--------|:-----------------------------|
+| `ERII_JOBRUNR_DASHBOARD`      | `false` | Enable the JobRunr dashboard |
+| `ERII_JOBRUNR_DASHBOARD_PORT` | `8000`  | Dashboard port               |
 
 Visit `http://localhost:8000` after enabling.
 
 ## H2 Database Web Console
 
-Used for directly viewing and manipulating the database:
+Used for directly viewing and manipulating the database.
 
-```bash
-# Enable via environment variable
-export ERII_H2_CONSOLE=true
+Enable via `.env.local`:
 
-# Or via JVM arguments
-java -Dh2.console.enabled=true -Dh2.console.port=8082 -jar erii.jar
+```ini
+ERII_H2_CONSOLE=true
+ERII_H2_CONSOLE_PORT=8082
 ```
 
-| Parameter | Default | Description |
-|:---|:---|:---|
-| `h2.console.enabled` | `false` | Whether to enable the H2 console |
-| `h2.console.port` | `8082` | Console port |
+| Parameter              | Default | Description           |
+|:-----------------------|:--------|:----------------------|
+| `ERII_H2_CONSOLE`      | `false` | Enable the H2 console |
+| `ERII_H2_CONSOLE_PORT` | `8082`  | Console port          |
 
 Visit `http://localhost:8082` after enabling.
