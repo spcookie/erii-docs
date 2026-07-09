@@ -1,111 +1,48 @@
 # What is erii
 
-erii is an AI group chat bot framework built on Kotlin and Ktor. It is not merely a message reply system, but an intelligent agent with comprehensive cognitive capabilities.
+erii is an AI bot that participates in group chats. It is not merely a message reply system — it behaves like a real group member, with its own emotions, memory, and personality.
 
-erii integrates emotion perception, memory storage, and personality modeling. Its emotional state adapts dynamically to conversation content, with linguistic style adjusting synchronously. It employs an active perception architecture rather than a passive command-response model: by analyzing group atmosphere, it engages or remains silent at appropriate moments, and proactively initiates topics when the group becomes inactive. Through sustained interaction, erii memorizes member preferences and acquires group-specific terminology and expressions.
+## What It Can Do
 
-## Core Systems
+**Has emotions, reads the room**
 
-<div class="grid cards" markdown>
+erii's emotions shift with the conversation. Lively when the group is buzzing, reserved when things get serious — never out of place.
 
--   :material-emoticon-outline:{ .lg .middle } __Emotion System__
+**Remembers, gets better over time**
 
-    ---
+erii remembers what people say and what they like. The longer you chat, the more it understands the group and matches its vibe.
 
-    PAD three-dimensional emotion model (Pleasure, Arousal, Dominance). Real-time emotional adjustment based on conversation content, influencing reply tone, emoji usage, and linguistic style.
+**Proactive, not just reactive**
 
--   :material-brain:{ .lg .middle } __Memory System__
+When the group goes quiet, erii starts conversations. When something catches its interest, it jumps in — just like a real group member.
 
-    ---
+**Follows rules, stays in line**
 
-    Multi-dimensional memory (user profiles, preferences, facts, summaries). Semantic retrieval based on vector similarity across three levels: global, group, and member.
+Set rules with simple Markdown files. Different groups can have different codes of conduct, and erii follows them strictly.
 
--   :material-waves:{ .lg .middle } __Flow System__
+**Reminders and summaries**
 
-    ---
+Schedule reminders and erii will notify you on time. It can also automatically summarize conversations you missed.
 
-    0-100 flow value quantifying conversational engagement. Rapid entry into focused state upon matching topics of interest, with built-in overheat protection.
+## Technical Features
 
--   :material-lightning-bolt:{ .lg .middle } __Volition System__
+| Feature          | Description                                                              |
+|:-----------------|:-------------------------------------------------------------------------|
+| Multi-LLM        | OpenAI and Anthropic compatible APIs                                     |
+| MCP Tools        | Extend AI Agent capabilities via Model Context Protocol                  |
+| Plugin System    | Add new features through plugins: TTS, image generation, music search, etc. |
+| Multi-Bot        | Configure multiple bots with different personalities for different groups |
+| CLI Tool         | Command-line tools for configuration and data management                 |
 
-    ---
+## How It Works
 
-    Proactive speech impulse calculated from multi-dimensional factors including emotion, flow, and keywords. Three modes: Interrupt, Icebreak, and Routine, with situational awareness capability.
+erii connects to QQ via a OneBot V11 server. Incoming messages are processed by AI models, constrained by rule files, with all data stored locally — no cloud service required.
 
--   :material-file-document-multiple:{ .lg .middle } __Rule Management__
+Plugins extend its capabilities — from sending memes to generating images, from TTS to virtual pet games.
 
-    ---
+## Next Steps
 
-    Rules stored as Markdown files with hot reload support. Multi-level scope (global > Bot > group). AI may manage rules autonomously via ToolSet.
-
--   :material-clock-outline:{ .lg .middle } __Cron System__
-
-    ---
-
-    Efficient time-wheel-based task scheduling. Supports one-shot and recurring reminders defined by Cron expressions. AI generates natural reminder text.
-
--   :material-text-box-search:{ .lg .middle } __Summary System__
-
-    ---
-
-    Automatic generation of group chat conversation summaries. AI extracts key information and topic threads, with historical summary retrieval.
-
--   :material-dna:{ .lg .middle } __Evolution System__
-
-    ---
-
-    Automatic learning of new vocabulary and trending expressions from group chats. Records semantic meaning and usage context, integrating them naturally at appropriate moments.
-
-</div>
-
-## Plugin Extensions
-
-erii is built on the PF4J plugin framework and supports four extension points:
-
-| Extension Type | Description | Trigger |
-|:---|:---|:---|
-| **AgentExtension** | General agent extension | Always participates in agent loop |
-| **RouteExtension** | LLM routing extension | Matched by RoutingAgent intent classification |
-| **CmdExtension** | Command extension | `/xxx` command prefix match, supports aliases |
-| **PassiveExtension** | Passive extension | Background tasks / event listeners |
-
-## Component Services
-
-| Component            | Description                                      | Supported Backends                        |
-|:---------------------|:-------------------------------------------------|:------------------------------------------|
-| **LLM Chat**         | AI conversational reasoning                      | OpenAI / Anthropic compatible APIs        |
-| **Vector Embedding** | Text and image semantic vectorization            | ByteDance Embedding / SiliconFlow         |
-| **Web Search**       | Real-time search for AI Agent                    | Exa / MiniMax Search                      |
-| **Vision**           | Image content understanding and description      | MiniMax Vision                            |
-| **Browser**          | Web page screenshots and Markdown scraping       | Playwright                                |
-| **MCP Tools**        | External tool servers via Model Context Protocol | stdio / SSE / Streamable HTTP / WebSocket |
-
-## Tech Stack
-
-<div class="grid cards" markdown>
-
--   __Backend__
-
-    ---
-
-    Kotlin 2.2+ &middot; Ktor 3.3+ &middot; Koin 4.1+ &middot; JobRunr 8.3+ &middot; H2 &middot; Exposed &middot; PF4J 3.15+
-
--   __AI Framework__
-
-    ---
-
-    Koog Agents 0.7+ &middot; Multi-provider LLM support
-
--   __CLI Tool__
-
-    ---
-
-    Go 1.21+ &middot; Bubble Tea TUI
-
--   __Distribution__
-
-    ---
-
-    npm monorepo &middot; Node.js CLI launcher
-
-</div>
+- [Getting Started](getting-started.md): Installation and basic configuration
+- [Server Management](server/start.md): Start and operations
+- [CLI Commands](cli/setup.md): Complete command-line reference
+- [Plugins](plugins/install.md): Extend erii's capabilities
