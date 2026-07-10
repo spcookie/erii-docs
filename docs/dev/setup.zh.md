@@ -33,7 +33,7 @@ erii/
 │       ├── data/                 # 数据模型（HistoryRecord, HistoryTable 等）
 │       ├── event/                # 事件系统（PSFeature, ProactiveSpeakFeature）
 │       ├── IBotManage.kt         # Bot 管理接口
-│       ├── LLMProviderChoice.kt  # LLM 提供商选择器
+│       ├── LLMModelChoice.kt  # LLM 模型选择器
 │       └── toolkit/              # 工具集（ConfigHolder, BrowserScraperHolder）
 ├── erii-core/                    # 核心服务端
 │   └── src/main/kotlin/uesugi/
