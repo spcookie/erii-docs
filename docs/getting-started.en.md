@@ -9,7 +9,8 @@
 
 ## Script Install (Recommended)
 
-The script automatically checks and installs the Node.js environment.
+The script automatically checks and installs the Node.js environment. It also latency-tests and picks the fastest
+Node.js / npm mirror automatically.
 
 === "Linux / macOS"
 
@@ -22,6 +23,22 @@ The script automatically checks and installs the Node.js environment.
     ```powershell
     irm https://raw.githubusercontent.com/spcookie/erii-distribution/refs/heads/master/scripts/install.ps1 | iex
     ```
+
+=== "Linux / macOS (China mirror)"
+
+    ```bash
+    curl -fsSL https://raw.giteeusercontent.com/spcookie/erii-distribution/raw/master/scripts/install.sh | bash
+    ```
+
+=== "Windows PowerShell (China mirror)"
+
+    ```powershell
+    irm https://raw.giteeusercontent.com/spcookie/erii-distribution/raw/master/scripts/install.ps1 | iex
+    ```
+
+!!! tip "Users in mainland China"
+
+    If GitHub is slow, use the "China mirror" tabs backed by Gitee. The script itself also latency-tests and prefers domestic mirrors when downloading Node.js and installing npm packages.
 
 ## Global Install
 

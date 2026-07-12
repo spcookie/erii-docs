@@ -9,7 +9,7 @@
 
 ## 脚本安装（推荐）
 
-脚本会自动检查并安装 Node.js 环境。
+脚本会自动检查并安装 Node.js 环境。脚本本身还会自动测速选择最快的 Node.js / npm 镜像，对国内网络友好。
 
 === "Linux / macOS"
 
@@ -22,6 +22,22 @@
     ```powershell
     irm https://raw.githubusercontent.com/spcookie/erii-distribution/refs/heads/master/scripts/install.ps1 | iex
     ```
+
+=== "Linux / macOS（国内加速）"
+
+    ```bash
+    curl -fsSL https://raw.giteeusercontent.com/spcookie/erii-distribution/raw/master/scripts/install.sh | bash
+    ```
+
+=== "Windows PowerShell（国内加速）"
+
+    ```powershell
+    irm https://raw.giteeusercontent.com/spcookie/erii-distribution/raw/master/scripts/install.ps1 | iex
+    ```
+
+!!! tip "国内网络"
+
+    若访问 GitHub 缓慢，请使用「国内加速」标签页的 Gitee 源。脚本下载 Node.js 与安装 npm 包时也会自动测速并优先选用国内镜像。
 
 ## 全局安装
 
