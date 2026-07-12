@@ -70,6 +70,7 @@ plugins:
                 - CLI 命令:
                     - setup: cli/setup.md
                     - config: cli/config.md
+                    - server: cli/server.md
                     - manage: cli/manage.md
                     - stats: cli/stats.md
                     - usage: cli/usage.md
@@ -104,6 +105,7 @@ plugins:
                 - CLI Commands:
                     - setup: cli/setup.md
                     - config: cli/config.md
+                    - server: cli/server.md
                     - manage: cli/manage.md
                     - stats: cli/stats.md
                     - usage: cli/usage.md
