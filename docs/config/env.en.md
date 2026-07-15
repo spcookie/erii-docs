@@ -19,16 +19,17 @@
 
 ## Server Configuration
 
-| Variable | Default | Description |
-|:---|:---|:---|
-| `ERII_SERVER_USERNAME` | `eriix` | Admin username |
-| `ERII_SERVER_PASSWORD` | `@Aa123!` | Admin password |
-| `ERII_PORT` | `8080` | Server port |
-| `ERII_START_MODE` | — | Set to `CLI` for file-only logging |
-| `ERII_JOBRUNR_DASHBOARD` | `false` | Enable job dashboard |
-| `ERII_JOBRUNR_DASHBOARD_PORT` | `8000` | Dashboard port |
-| `ERII_H2_CONSOLE` | `false` | Enable database console |
-| `ERII_H2_CONSOLE_PORT` | `8082` | Console port |
+| Variable                      | Default   | Description                                                     |
+|:------------------------------|:----------|:----------------------------------------------------------------|
+| `ERII_SERVER_USERNAME`        | `eriix`   | Admin username                                                  |
+| `ERII_SERVER_PASSWORD`        | `@Aa123!` | Admin password                                                  |
+| `ERII_PORT`                   | `8080`    | Server port                                                     |
+| `ERII_START_MODE`             | —         | Set to `CLI` for file-only logging                              |
+| `ERII_JOBRUNR_DASHBOARD`      | `false`   | Enable job dashboard                                            |
+| `ERII_JOBRUNR_DASHBOARD_PORT` | `8000`    | Dashboard port                                                  |
+| `ERII_H2_CONSOLE`             | `false`   | Enable database console                                         |
+| `ERII_H2_CONSOLE_PORT`        | `8082`    | Console port                                                    |
+| `ERII_STORE_DIR`              | `./store` | Storage directory for data, objects, vectors, graphs, and cache |
 
 ## Proxy
 

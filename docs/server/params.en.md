@@ -43,3 +43,6 @@ ERII_H2_CONSOLE_PORT=8082
 | `ERII_H2_CONSOLE_PORT` | `8082`  | Console port          |
 
 Visit `http://localhost:8082` after enabling.
+
+Use `jdbc:h2:file:<ERII_STORE_DIR or -Derii.store.dir>/data` as the JDBC URL. The default is
+`jdbc:h2:file:./store/data`.

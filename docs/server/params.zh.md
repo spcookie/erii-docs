@@ -34,6 +34,6 @@ ERII_H2_CONSOLE_PORT=8082
 
 开启后访问 `http://localhost:8082`。
 
-- JDBC URL：`jdbc:h2:file:./store/data`
+- JDBC URL：`jdbc:h2:file:<ERII_STORE_DIR 或 -Derii.store.dir>/data`，默认 `jdbc:h2:file:./store/data`
 - 用户名：`sa`
 - 密码：留空

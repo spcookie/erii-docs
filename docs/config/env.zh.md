@@ -41,16 +41,17 @@ erii config env set <变量名> <值>  # 修改
 
 ## 服务端配置
 
-| 变量名 | 默认值 | 说明 |
-|:---|:---|:---|
-| `ERII_SERVER_USERNAME` | `eriix` | 管理页面用户名 |
-| `ERII_SERVER_PASSWORD` | `@Aa123!` | 管理页面密码 |
-| `ERII_PORT` | `8080` | 服务端口 |
-| `ERII_START_MODE` | — | 设为 `CLI` 时日志写入文件 |
-| `ERII_JOBRUNR_DASHBOARD` | `false` | 启用任务管理面板 |
-| `ERII_JOBRUNR_DASHBOARD_PORT` | `8000` | 任务面板端口 |
-| `ERII_H2_CONSOLE` | `false` | 启用数据库面板 |
-| `ERII_H2_CONSOLE_PORT` | `8082` | 数据库面板端口 |
+| 变量名                           | 默认值       | 说明                |
+|:------------------------------|:----------|:------------------|
+| `ERII_SERVER_USERNAME`        | `eriix`   | 管理页面用户名           |
+| `ERII_SERVER_PASSWORD`        | `@Aa123!` | 管理页面密码            |
+| `ERII_PORT`                   | `8080`    | 服务端口              |
+| `ERII_START_MODE`             | —         | 设为 `CLI` 时日志写入文件  |
+| `ERII_JOBRUNR_DASHBOARD`      | `false`   | 启用任务管理面板          |
+| `ERII_JOBRUNR_DASHBOARD_PORT` | `8000`    | 任务面板端口            |
+| `ERII_H2_CONSOLE`             | `false`   | 启用数据库面板           |
+| `ERII_H2_CONSOLE_PORT`        | `8082`    | 数据库面板端口           |
+| `ERII_STORE_DIR`              | `./store` | 数据、对象、向量、图和缓存存储目录 |
 
 ---
 
