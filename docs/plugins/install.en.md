@@ -31,4 +31,12 @@ erii is built on the PF4J plugin framework and supports four extension types:
     cp my-plugin-0.0.1.zip /path/to/erii/plugins/
     ```
 
-After installation, run `erii reload` to reload plugins.
+After installation, run:
+
+```bash
+erii reload
+erii plugin refresh
+erii refresh
+```
+
+If the server is not running, the plugin will be loaded on the next startup. `plugin refresh` unloads and reloads plugin lifecycle at runtime.

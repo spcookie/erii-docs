@@ -22,6 +22,15 @@ Plugin JSON configuration files are located at `plugins/config/<plugin-id>.json`
 }
 ```
 
+After editing the file directly, run:
+
+```bash
+erii reload
+erii refresh
+```
+
+`reload` merges and refreshes local plugin configuration files, while `refresh` asks the running backend to reread its configuration cache.
+
 ??? info "Configuration priority (lowest to highest)"
     1. Default `plugin.json` in the plugin classpath
     2. `plugins/config/<plugin-id>.json` (overrides defaults)

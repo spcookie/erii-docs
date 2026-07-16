@@ -291,4 +291,4 @@ uesugi.plugin.animal.AnimalExtension
 | 8 | 添加 services 文件 | `META-INF/services/org.pf4j.Extension` |
 | 9 | 构建 | `cd erii-plugins && ./gradlew :my-plugin:build` |
 | 10 | 部署 | 将 `build/plugin/my-plugin-*.zip` 放入 `plugins/` 目录 |
-| 11 | 重载 | `erii reload && erii refresh` |
+| 11 | 重载 | `erii reload && erii plugin refresh my-plugin && erii refresh` |

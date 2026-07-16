@@ -58,6 +58,7 @@ Run tests:
 
 ## Development Tips
 
-- :material-reload: After modifying plugins, run `erii reload` to hot-reload without restarting the server
+- :material-reload: After modifying plugin config, run `erii reload` and then `erii refresh`
+- :material-refresh: After updating plugin code, run `erii plugin refresh [plugin-id]` to unload and reload plugin lifecycle without restarting the server
 - :material-file-eye: View plugin logs: `erii log`
 - :material-state-machine: Check plugin load status via `erii stats`

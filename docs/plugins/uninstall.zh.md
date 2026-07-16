@@ -14,4 +14,12 @@
     rm /path/to/erii/plugins/my-plugin-*.zip
     ```
 
-卸载后运行 `erii reload` 使更改生效。
+卸载后运行：
+
+```bash
+erii reload
+erii plugin refresh
+erii refresh
+```
+
+如果服务未运行，也可以直接在下次启动时生效。

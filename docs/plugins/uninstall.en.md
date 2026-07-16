@@ -15,4 +15,12 @@
     rm -rf /path/to/erii/plugins/config/my-plugin.json
     ```
 
-After uninstalling, run `erii reload` for the changes to take effect.
+After uninstalling, run:
+
+```bash
+erii reload
+erii plugin refresh
+erii refresh
+```
+
+If the server is not running, the change will take effect on the next startup.

@@ -29,7 +29,14 @@ erii config plugin set speech api_key "your-key"
 }
 ```
 
-直接编辑该文件后运行 `erii reload` 生效。
+直接编辑该文件后运行：
+
+```bash
+erii reload
+erii refresh
+```
+
+`reload` 用于合并/刷新本地插件配置文件，`refresh` 用于通知正在运行的后端重新读取配置缓存。
 
 ## 启用或禁用插件
 

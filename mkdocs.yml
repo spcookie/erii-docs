@@ -75,7 +75,7 @@ plugins:
                     - stats: cli/stats.md
                     - usage: cli/usage.md
                     - log: cli/log.md
-                    - reload 与 refresh: cli/reload-refresh.md
+                    - reload / refresh / plugin refresh: cli/reload-refresh.md
                 - 插件管理:
                     - 安装插件: plugins/install.md
                     - 配置插件: plugins/config.md
@@ -110,7 +110,7 @@ plugins:
                     - stats: cli/stats.md
                     - usage: cli/usage.md
                     - log: cli/log.md
-                    - reload & refresh: cli/reload-refresh.md
+                    - reload / refresh / plugin refresh: cli/reload-refresh.md
                 - Plugins:
                     - Install: plugins/install.md
                     - Configure: plugins/config.md

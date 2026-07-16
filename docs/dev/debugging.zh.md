@@ -48,8 +48,9 @@ cp erii-plugins/my-plugin/build/plugin/my-plugin-0.0.1.zip /path/to/erii/plugins
 然后执行：
 
 ```bash
-erii reload   # 初始化插件配置
-erii refresh  # 通知后端刷新缓存（若服务在运行）
+erii reload          # 初始化/合并插件配置
+erii plugin refresh  # 卸载并重新加载运行中的插件（若服务在运行）
+erii refresh         # 通知后端刷新配置缓存
 ```
 
 或直接重启服务加载新插件：
@@ -209,14 +210,15 @@ cd erii-plugins && ./gradlew :my-plugin:build
 # 3. 复制到 plugins 目录
 cp build/plugin/my-plugin-0.0.1.zip /path/to/erii/plugins/
 
-# 4. 热重载（无需重启服务）
+# 4. 刷新插件生命周期（无需重启服务）
 erii reload
+erii plugin refresh my-plugin
 erii refresh
 ```
 
 ??? warning "热加载限制"
-    若插件修改涉及以下变更，需要重启服务而非 `reload`：
-    - 新增了外部依赖 jar（需要更新 classpath）
+    `erii reload` 只处理配置文件合并，插件生命周期重载需要 `erii plugin refresh`。若插件修改涉及以下变更，仍建议重启服务：
+    - 新增或替换外部依赖 jar，且类加载器无法安全卸载旧版本
     - 修改了 `@PluginDefinition` 的 `requires` 或 `dependencies`
     - 插件 zip 包内的 `lib/` 目录结构变化
 
