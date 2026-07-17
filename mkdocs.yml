@@ -85,6 +85,8 @@ plugins:
                 - 应用配置: config/app.md
                 - 环境变量: config/env.md
                 - 服务端参数: server/params.md
+            - Skill:
+                - Install erii-plugin-skill: skills/install.md
             - 开发手册:
                 - 本地开发环境: dev/setup.md
                 - 插件开发概述: dev/plugin-overview.md
@@ -119,6 +121,8 @@ plugins:
                 - App Config: config/app.md
                 - Environment Variables: config/env.md
                 - Server Parameters: server/params.md
+            - Skill:
+                - Install erii-plugin-skill: skills/install.md
             - Development:
                 - Local Setup: dev/setup.md
                 - Plugin Overview: dev/plugin-overview.md
