@@ -1,0 +1,1601 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="集成情绪感知、记忆存储与性格建模的 AI 群聊机器人框架">
+      
+      
+      
+        <link rel="canonical" href="https://spcookie.github.io/erii-docs/dev/plugin-overview/">
+      
+      
+        <link rel="prev" href="../setup/">
+      
+      
+        <link rel="next" href="../plugin-class/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="zh">
+        
+          <link rel="alternate" href="../../en/dev/plugin-overview/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/LOGO.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>插件开发概述 - erii</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="erii" class="md-header__button md-logo" aria-label="erii" data-md-component="logo">
+      
+  <img src="../../assets/LOGO.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            erii
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              插件开发概述
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="grey"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="grey"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="grey"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../en/dev/plugin-overview/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/spcookie/erii" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    spcookie/erii
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../what-is-erii/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  快速开始
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../config/app/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  配置参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/install/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Skill
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  开发手册
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="erii" class="md-nav__button md-logo" aria-label="erii" data-md-component="logo">
+      
+  <img src="../../assets/LOGO.svg" alt="logo">
+
+    </a>
+    erii
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/spcookie/erii" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    spcookie/erii
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../what-is-erii/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../config/app/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置参考
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../skills/install/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发手册
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    开发手册
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    本地开发环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    插件开发概述
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    插件开发概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        扩展接口体系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩展接口体系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agentplugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AgentPlugin 基类
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugincontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PluginContext 能力矩阵
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PluginContext 能力矩阵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler 调度器接口
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mem-kv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mem / Kv 缓存接口
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meta 消息元数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meta 的关键方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        插件注册方法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        两种开发模式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        插件打包
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类开发模式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注解开发模式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    构建与调试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        扩展接口体系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩展接口体系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agentplugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AgentPlugin 基类
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugincontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PluginContext 能力矩阵
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PluginContext 能力矩阵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler 调度器接口
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mem-kv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mem / Kv 缓存接口
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meta 消息元数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meta 的关键方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        插件注册方法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        两种开发模式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        插件打包
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">插件开发概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>erii 的插件系统基于 <strong>PF4J 3.15+</strong> 框架，通过 <code>uesugi.erii-plugin</code> Gradle 约定插件统一构建流程。插件以 zip 包形式分发，运行时由 PF4J 的 <code>DefaultPluginManager</code> 加载和管理生命周期。</p>
+<h2 id="_2">扩展接口体系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>插件通过实现以下四种扩展接口来接入不同的系统机制：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">接口</th>
+<th style="text-align: left;">完整类路径</th>
+<th style="text-align: left;">触发机制</th>
+<th style="text-align: left;">适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>AgentExtension&lt;T&gt;</code></td>
+<td style="text-align: left;"><code>uesugi.spi.AgentExtension</code></td>
+<td style="text-align: left;">始终参与 Agent 消息循环</td>
+<td style="text-align: left;">需要在每次消息处理中参与的通用扩展</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>RouteExtension&lt;T&gt;</code></td>
+<td style="text-align: left;"><code>uesugi.spi.RouteExtension</code></td>
+<td style="text-align: left;">LLM RoutingAgent 意图分类后按 matcher 匹配调用</td>
+<td style="text-align: left;">特定意图触发的功能（如图片搜索、音乐推荐）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CmdExtension&lt;T, Arg, Plugin&gt;</code></td>
+<td style="text-align: left;"><code>uesugi.spi.CmdExtension</code></td>
+<td style="text-align: left;">用户发送 <code>/xxx</code> 命令，匹配 <code>cmd</code> 和 <code>alias</code></td>
+<td style="text-align: left;">用户可主动调用的命令式功能</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PassiveExtension&lt;T&gt;</code></td>
+<td style="text-align: left;"><code>uesugi.spi.PassiveExtension</code></td>
+<td style="text-align: left;">不响应消息事件，仅加载时初始化</td>
+<td style="text-align: left;">后台任务、HTTP 路由注册、定时作业</td>
+</tr>
+</tbody>
+</table>
+<p><code>T</code> 泛型参数指定插件类（必须是 <code>AgentPlugin</code> 的子类），框架在运行时通过反射解析泛型类型获取对应的 <code>PluginWrapper</code>。</p>
+<h3 id="agentplugin">AgentPlugin 基类<a class="headerlink" href="#agentplugin" title="Permanent link">&para;</a></h3>
+<p>所有插件类必须继承抽象类 <code>AgentPlugin</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">AgentPlugin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Plugin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">setWrapper</span><span class="p">(</span><span class="n">wrapper</span><span class="p">:</span><span class="w"> </span><span class="n">PluginWrapper</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">PLUGIN_CONTEXT_HOLDER</span><span class="o">[</span><span class="k">this</span><span class="o">::</span><span class="n">class</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wrapper</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>setWrapper()</code> 方法由 PF4J 框架在加载插件时调用，将 <code>PluginWrapper</code> 实例注册到全局 <code>PLUGIN_CONTEXT_HOLDER</code> 映射中。扩展通过 <code>ref</code> 属性反查对应的插件类和 wrapper。</p>
+<h2 id="plugincontext">PluginContext 能力矩阵<a class="headerlink" href="#plugincontext" title="Permanent link">&para;</a></h2>
+<p>插件通过 <code>PluginContext</code> 接口获得与 erii 核心系统的完整交互能力：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">属性</th>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>mem</code></td>
+<td style="text-align: left;"><code>Mem</code></td>
+<td style="text-align: left;">内存缓存，支持 AFTER_WRITE / AFTER_ACCESS 两种过期策略</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>kv</code></td>
+<td style="text-align: left;"><code>Kv</code></td>
+<td style="text-align: left;">键值持久化存储（基于文件或数据库），同样支持过期策略</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>blob</code></td>
+<td style="text-align: left;"><code>Blob</code></td>
+<td style="text-align: left;">二进制文件存储，基于 Okio Path 进行 get/set/delete</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vector</code></td>
+<td style="text-align: left;"><code>Vector</code></td>
+<td style="text-align: left;">向量嵌入与语义检索：<code>embedding()</code> 生成向量，<code>search()</code> 语义搜索，<code>upsert()</code> 写入索引</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>config</code></td>
+<td style="text-align: left;"><code>PluginConfig</code></td>
+<td style="text-align: left;">插件配置文件读取，支持三层优先级合并和环境变量引用</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>database</code></td>
+<td style="text-align: left;"><code>Database</code></td>
+<td style="text-align: left;">数据库访问，提供 <code>getHistory()</code> 查询聊天历史</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>scheduler</code></td>
+<td style="text-align: left;"><code>Scheduler</code></td>
+<td style="text-align: left;">任务调度器（见下方详细接口）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>llm</code></td>
+<td style="text-align: left;"><code>PromptExecutor</code></td>
+<td style="text-align: left;">LLM 调用接口，基于 Koog Prompt 引擎</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>http</code></td>
+<td style="text-align: left;"><code>HttpClient</code></td>
+<td style="text-align: left;">Ktor HttpClient，用于发起 HTTP 请求</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>http.proxy</code></td>
+<td style="text-align: left;"><code>HttpClient</code></td>
+<td style="text-align: left;">带代理的 HTTP 客户端（通过 conf/application.conf 中的代理配置）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>server</code></td>
+<td style="text-align: left;"><code>Server</code></td>
+<td style="text-align: left;">服务端路由注册：<code>route {}</code> 添加自定义 HTTP 端点，<code>url</code> 获取当前服务器 URL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scheduler">Scheduler 调度器接口<a class="headerlink" href="#scheduler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">Scheduler</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Cron 表达式周期调度</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">scheduleRecurrently</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">cron</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">action</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// Kotlin Duration 间隔调度（如 5.minutes）</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">scheduleRecurrently</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">interval</span><span class="p">:</span><span class="w"> </span><span class="n">Duration</span><span class="p">,</span><span class="w"> </span><span class="n">action</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// 一次性延迟任务</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">schedule</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">delay</span><span class="p">:</span><span class="w"> </span><span class="n">Duration</span><span class="p">,</span><span class="w"> </span><span class="n">action</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// 立即入队执行</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">action</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// 取消已注册的任务</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">cancel</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>底层基于 JobRunr 实现，<code>scheduleRecurrently</code> 将在 JobRunr 面板（<code>:8000</code>）中可见。</p>
+<h3 id="mem-kv">Mem / Kv 缓存接口<a class="headerlink" href="#mem-kv" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">Mem</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AutoCloseable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="kt">String?</span>
+<span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">expire</span><span class="p">:</span><span class="w"> </span><span class="n">Duration</span><span class="p">,</span><span class="w"> </span><span class="n">strategy</span><span class="p">:</span><span class="w"> </span><span class="n">ExpireStrategy</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">ExpireStrategy</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">AFTER_WRITE</span><span class="p">,</span><span class="w"> </span><span class="n">AFTER_ACCESS</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><code>mem</code> 和 <code>kv</code> 接口完全相同，但 <code>mem</code> 是进程内存缓存（重启丢失），<code>kv</code> 是持久化存储（重启保留）。</p>
+<h3 id="meta">Meta 消息元数据<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">Meta</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">botId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w">        </span><span class="c1">// 当前 Bot ID</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">groupId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w">      </span><span class="c1">// 当前群组 ID</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">roledBot</span><span class="p">:</span><span class="w"> </span><span class="n">IBotManage</span><span class="p">.</span><span class="na">RoledBot</span><span class="w">  </span><span class="c1">// Bot 角色信息（含 refBot 引用）</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">input</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="w">       </span><span class="c1">// 用户输入文本（可能为空）</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">senderId</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="w">    </span><span class="c1">// 发送者 ID</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">echo</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="w">        </span><span class="c1">// 消息回显 ID</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="meta_1">Meta 的关键方法<a class="headerlink" href="#meta_1" title="Permanent link">&para;</a></h3>
+<p><strong>sendAgent()</strong> — 向 LLM Agent 发送输入并触发工具调用：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 简单调用</span>
+<span class="kd">fun</span><span class="w"> </span><span class="n">Meta</span><span class="p">.</span><span class="nf">sendAgent</span><span class="p">(</span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">:</span><span class="w"> </span><span class="n">SendAgentStateDsl? </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+
+<span class="c1">// 带配置的完整调用</span>
+<span class="kd">fun</span><span class="w"> </span><span class="n">Meta</span><span class="p">.</span><span class="nf">sendAgent</span><span class="p">(</span>
+<span class="w">    </span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+<span class="w">    </span><span class="n">conf</span><span class="p">:</span><span class="w"> </span><span class="n">SendAgentConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EmptyConfig</span><span class="p">,</span>
+<span class="w">    </span><span class="n">state</span><span class="p">:</span><span class="w"> </span><span class="n">SendAgentStateDsl? </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><code>SendAgentConfig</code> 支持的配置项：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">配置项</th>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>WebSearch.ENABLE/DISABLE</code></td>
+<td style="text-align: left;">enum</td>
+<td style="text-align: left;">是否启用 Web 搜索</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ChatVision.ENABLE/DISABLE</code></td>
+<td style="text-align: left;">enum</td>
+<td style="text-align: left;">是否启用多模态视觉</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ToolSetBuilder { tool { ... } }</code></td>
+<td style="text-align: left;">builder</td>
+<td style="text-align: left;">注入自定义工具集</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Feature(PSFeature)</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: left;">主动发言特性标志（如 GRAB, FALLBACK）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>getRefBot() / getAdmins() / isAdmin()</strong> — 便捷访问函数：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">fun</span><span class="w"> </span><span class="n">Meta</span><span class="p">.</span><span class="nf">getRefBot</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roledBot</span><span class="p">.</span><span class="na">refBot</span>
+<span class="kd">fun</span><span class="w"> </span><span class="n">Meta</span><span class="p">.</span><span class="nf">getAdmins</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConfigHolder</span><span class="p">.</span><span class="na">getAdmins</span><span class="p">(</span><span class="n">BotManage</span><span class="p">.</span><span class="na">getConfigKey</span><span class="p">(</span><span class="n">botId</span><span class="p">),</span><span class="w"> </span><span class="n">groupId</span><span class="p">)</span>
+<span class="kd">fun</span><span class="w"> </span><span class="n">Meta</span><span class="p">.</span><span class="nf">isAdmin</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">senderId</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">getAdmins</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="_3">插件注册方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在 <code>onLoad(context: PluginContext)</code> 中注册扩展功能：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onLoad</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">PluginContext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 注册消息处理链（handler）</span>
+<span class="w">    </span><span class="n">context</span><span class="p">.</span><span class="na">chain</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">meta</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="c1">// meta 是当前消息的 Meta 对象</span>
+<span class="w">        </span><span class="c1">// 在此处理消息逻辑</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 注册 LLM 工具集（Agent 可调用的工具）</span>
+<span class="w">    </span><span class="n">context</span><span class="p">.</span><span class="na">tool</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="n">MyToolSet</span><span class="p">(</span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// 返回 MetaToolSetCreator</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><code>context.chain(handler)</code> — 注册一个消息处理器。每次群组收到消息时，所有已注册的 chain handler 按顺序执行。</li>
+<li><code>context.tool(toolset)</code> — 注册一个 LLM 工具集工厂。Agent 可通过 Function Calling 调用工具集中的 <code>@Tool</code> 标注方法。</li>
+</ul>
+<h2 id="_4">两种开发模式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模式</th>
+<th style="text-align: left;">定义方式</th>
+<th style="text-align: left;">代码生成</th>
+<th style="text-align: left;">适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>类开发模式</strong></td>
+<td style="text-align: left;">继承 <code>AgentPlugin()</code>，实现 <code>AgentExtension&lt;T&gt;</code> 等接口</td>
+<td style="text-align: left;">无（手写所有代码）</td>
+<td style="text-align: left;">复杂插件、需要精细控制生命周期和扩展行为</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>注解开发模式</strong></td>
+<td style="text-align: left;"><code>@file:Definition</code> 文件注解 + <code>@Route</code>/<code>@Cmd</code>/<code>@Passive</code>/<code>@LLMTool</code> 等功能注解</td>
+<td style="text-align: left;">KSP 编译时生成 <code>GeneratedRoute_*</code>、<code>GeneratedCmd_*</code>、<code>GeneratedPassive_*</code>、<code>GeneratedToolSet_*</code>、<code>GeneratedPlugin</code> 及 <code>META-INF/services/org.pf4j.Extension</code></td>
+<td style="text-align: left;">简单到中等复杂度的插件，声明式定义，减少样板代码</td>
+</tr>
+</tbody>
+</table>
+<p>两种模式可混合使用（如 <code>animal</code> 插件使用类模式，<code>lolisuki</code> 使用注解模式）。</p>
+<h2 id="_5">插件打包<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>插件通过 <code>uesugi.erii-plugin</code> Gradle 约定插件构建：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// erii-plugins/my-plugin/build.gradle.kts</span>
+<span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="s">&quot;uesugi.erii-plugin&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.0.1&quot;</span>
+</code></pre></div>
+<p>构建产物位于 <code>build/plugin/</code> 目录，为一个包含以下内容的 zip 文件：</p>
+<ul>
+<li><code>classes/</code> — 编译后的 <code>.class</code> 文件</li>
+<li><code>lib/</code> — 依赖 jar 包</li>
+<li><code>META-INF/</code> — <code>MANIFEST.MF</code>、<code>services/org.pf4j.Extension</code>（扩展注册文件）、<code>plugin.properties</code>（插件元数据）</li>
+</ul>
+<p>此 zip 文件可直接放入 erii 项目的 <code>plugins/</code> 目录加载。</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月17日 11:10:05 UTC">2026年7月17日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月17日 11:10:05 UTC">2026年7月17日</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="贡献者">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:weixiang.liu@mijahealth.com">weixiang.liu</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../setup/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 本地开发环境">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                本地开发环境
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../plugin-class/" class="md-footer__link md-footer__link--next" aria-label="下一页: 类开发模式">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                类开发模式
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2026 spcookie
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.prune", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
